@@ -59,14 +59,16 @@ class Influencer:
         self.sponsor = sponsor_object
 
     def get_sponsored_videos_num(self):
+        num = 0
         for post in self.__posts:
             if self.sponsor.pageName in post.caption_mentions:
-                pass
+                num += 1
 
 
 class spons:
     def __init__(self, pageName):
         self.pageName = pageName
+
 
 user = 'instagram'
 influencer = Influencer(user)
