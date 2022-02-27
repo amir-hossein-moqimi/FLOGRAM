@@ -18,6 +18,7 @@ from django.urls import path, include
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+app_name = 'FLOGRAM'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about, name="aboutUs"),
