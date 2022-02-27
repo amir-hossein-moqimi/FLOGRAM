@@ -68,12 +68,12 @@ class spons:
     def __init__(self, pageName):
         self.pageName = pageName
 
+user = 'instagram'
+influencer = Influencer(user)
+print(f'{influencer.followers}, {influencer.followings=}, {influencer.posts=}')
 
-i = Influencer('one_post')
-print(i.followers, i.followings, i.posts)
-
-print('comments', i.get_average_comments())
-print('likes', i.get_average_likes())
-print('views', i.get_average_view())
-i.set_sponsor(spons('spons'))
-print('sponsered', i.get_sponsored_videos_num())
+print('comments', influencer.get_average_comments())
+print('likes', influencer.get_average_likes())
+print('views', influencer.get_average_view())
+influencer.set_sponsor(spons('spons'))
+# print('sponsered', influencer.get_sponsored_videos_num())
