@@ -137,7 +137,8 @@
   <body class="bg-gray-300" style="font-family: Roboto">
     <div class="h-screen flex justify-center items-center">
       <div class="bg-white rounded-lg w-2/5 px-16 py-16">
-        <form>
+        <form action="{% url 'accounts:signup' %}" method="post">
+          {% csrf_token %}
           <div class="flex font-bold justify-center">
             <a href="{% url 'homePage' %}">
               <svg
@@ -194,6 +195,7 @@
                 type="text"
                 class="absolute w-full h-full py-2 px-3 outline-none inset-0 text-gray-700"
                 style="background: none"
+                name="Username"
               />
             </div>
           </div>
@@ -210,6 +212,7 @@
                 type="text"
                 class="absolute w-full h-full py-2 px-3 outline-none inset-0 text-gray-700"
                 style="background: none"
+                name="Instagram"
               />
             </div>
           </div>
@@ -226,6 +229,7 @@
                 type="password"
                 class="absolute w-full h-full py-2 px-3 outline-none inset-0 text-gray-700"
                 style="background: none"
+                name="Password"
               />
             </div>
           </div>
@@ -242,6 +246,7 @@
                 type="password"
                 class="absolute w-full h-full py-2 px-3 outline-none inset-0 text-gray-700"
                 style="background: none"
+                name="Confirm"
               />
             </div>
           </div>
@@ -258,13 +263,14 @@
                 type="text"
                 class="absolute w-full h-full py-2 px-3 outline-none inset-0 text-gray-700"
                 style="background: none"
+                name="Email"
               />
             </div>
           </div>
           <div class="containerra">
-            <input type="radio" name="select" id="option-1" />
-            <input type="radio" name="select" id="option-2" />
-            <input type="radio" name="select" id="option-3" />
+            <input type="radio" name="Influencer" id="option-1" />
+            <input type="radio" name="Manufacture" id="option-2" />
+            <input type="radio" name="Sponsor" id="option-3" />
             <label
               for="option-1"
               class="option option-1"
