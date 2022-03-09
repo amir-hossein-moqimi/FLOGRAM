@@ -1,0 +1,1 @@
+web: gunicorn FLOGRAM.wsgi --log-file - 
