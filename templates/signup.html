@@ -136,7 +136,7 @@
   </style>
   <body class="bg-gray-300" style="font-family: Roboto">
     <div class="h-screen flex justify-center items-center">
-      <div class="bg-white rounded-lg w-2/5 px-16 py-16">
+      <div class="bg-white rounded-lg w-4/5 max-w-2xl px-16 py-16">
         <form action="{% url 'accounts:signup' %}" method="post">
           {% csrf_token %}
           <div class="flex font-bold justify-center">
