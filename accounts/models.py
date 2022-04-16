@@ -15,8 +15,6 @@ from django.db.models.signals import post_save
 #     type = models.CharField(max_length=11, choices=TYPE.choices, default=TYPE.Influencer)
 #     def __str__(self):
 #         return self.username
-User._meta.get_field('email')._unique = True
-User._meta.get_field('email')._blank = False
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -24,8 +22,9 @@ class Profile(models.Model):
         Influencer = 'Influencer'
         Manufacture = 'Manufacture'
         Sponsor = 'Sponsor'
-    Instagram = models.CharField(max_length=50, unique=True)
-    type = models.CharField(max_length=11, choices=TYPE.choices, default=TYPE.Influencer)
+    Instagram = models.CharField(max_length=50, unique=True, null=True)
+    type = models.CharField(max_length=11, choices=TYPE.choices, default=TYPE.Influencer, null=True)
+    email = models.EmailField(max_length=50, unique=True, null=True)
     def __str__(self):
         return self.user.username
 

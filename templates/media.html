@@ -167,4 +167,20 @@
         </div>
       </nav>
       </header>
+      <img id="changable" src="../static/day.png" alt="an image" style="height: 60vh;width: 55vw;">
+      <button onclick="changeimage()" class="rounded-full w-50 h-50 outline-white" style="outline: 2px solid #fff;outline: offset 2px;">
+        <i class="fas fa-glasses text-white text-2xl"></i>
+      </button>
+      <button onclick="changeimage2()" class="rounded-full w-50 h-50 outline-white" style="outline: 2px solid #fff;outline: offset 2px;">
+        <i class="fas fa-solid fa-sun text-white text-2xl"></i>
+      </button>
+      <script>
+        function changeimage(){
+        document.getElementById("changable").src="../static/night.png";
+        }
+        function changeimage2(){
+        document.getElementById("changable").src="../static/day.png";
+        }
+      </script>
+      <p class="text-5xl text-white">See The Sunset At Noon :)</p>
     </body></html>
