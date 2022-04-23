@@ -1,0 +1,170 @@
+.pages {
+    height: 250vh;
+    width: 100%;
+    background-color: black;
+}
+.page1 {
+    height: 40%;
+    width: 100%;
+    display: flex;
+}
+.page2 {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.page1-left {
+    height: 100%;
+    width: 70%;
+}
+.page1-right {
+    height: 100%;
+    width: 30%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+}
+.left-top {
+    width: 100%;
+    height: 70%;
+    padding-top: 5%;
+    /* background-color: green; */
+}
+.left-bottom {
+    width: 100%;
+    height: 30%;
+    /* background-color: red; */
+}
+.description {
+    width: 50%;
+    height: 100%;
+    /* background-color: palevioletred; */
+    padding-right: 1%;
+    padding-left: 1%;
+}
+.video {
+    width: 50%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+.lastimage {
+    width: 100%;
+    height: 40%;
+    /* background-color: coral; */
+}
+.page2top {
+    width: 100%;
+    height: 60%;
+    display: flex;
+}
+#changable {
+    height: 90%;
+    width: 70%;
+    margin: auto;
+}
+#glasses,#sun {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#glasses {
+    margin-top: 30%;
+}
+#sun {
+    margin-top: 10%;
+}
+#mediavideo {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3 {
+    font-size: xx-large;
+    font-weight: 700;
+}
+h4 {
+    font-size: x-large;
+    font-weight: 500;
+}
+#compareimage {
+    height: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    /* margin-bottom: 2%; */
+}
+.icons-wrapper {
+    color: white;
+    margin-top: 5%;
+}
+.icon {
+    display: inline-block;
+    font-size: 44px;
+    animation: float 5s ease-in-out infinite;
+}
+.ri-facebook-circle-line {
+    animation-delay: 1s;
+}
+.ri-whatsapp-line {
+    animation-delay: 2s;
+}
+@keyframes float {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
