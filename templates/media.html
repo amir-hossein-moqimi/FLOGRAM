@@ -167,13 +167,15 @@
         </div>
       </nav>
       </header>
-      <img id="changable" src="../static/day.png" alt="an image" style="height: 60vh;width: 55vw;">
-      <button onclick="changeimage()" class="rounded-full w-50 h-50 outline-white" style="outline: 2px solid #fff;outline: offset 2px;">
+      <div style="padding-top: 7rem;padding-left: 5rem;">
+      <img id="changable" src="../static/day.png" alt="an image" style="height: 60vh;width: 48vw;" class="rounded-3xl">
+      <button onclick="changeimage()" class="rounded-full w-50 h-50 outline-white object-right-top" style="outline: 2px solid #fff;outline: offset 2px;">
         <i class="fas fa-glasses text-white text-2xl"></i>
       </button>
       <button onclick="changeimage2()" class="rounded-full w-50 h-50 outline-white" style="outline: 2px solid #fff;outline: offset 2px;">
         <i class="fas fa-solid fa-sun text-white text-2xl"></i>
       </button>
+      <p class="text-5xl text-white">See The Sunset At Noon :)</p></div>
       <script>
         function changeimage(){
         document.getElementById("changable").src="../static/night.png";
@@ -181,6 +183,15 @@
         function changeimage2(){
         document.getElementById("changable").src="../static/day.png";
         }
+        $(document).ready(function () {
+        $(".nav-toggler").each(function (_, navToggler) {
+          var target = $(navToggler).data("target");
+          $(navToggler).on("click", function () {
+            $(target).animate({
+              height: "toggle",
+            });
+          });
+        });
+      });
       </script>
-      <p class="text-5xl text-white">See The Sunset At Noon :)</p>
     </body></html>
