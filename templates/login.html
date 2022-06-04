@@ -73,6 +73,7 @@
     <div class="h-screen flex justify-center items-center">
       <div class="bg-white rounded-lg w-4/5 max-w-2xl px-16 py-16">
         <form action="{% url 'accounts:loginpage' %}" method="post">
+          {% csrf_token %}
           <div class="flex font-bold justify-center">
             <a href="{% url 'homePage' %}">
               <svg
@@ -129,6 +130,7 @@
                 type="text"
                 class="absolute w-full h-full py-2 px-3 outline-none inset-0 text-gray-700"
                 style="background: none"
+                name="username"
               />
             </div>
           </div>
@@ -145,14 +147,13 @@
                 type="password"
                 class="absolute w-full h-full py-2 px-3 outline-none inset-0 text-gray-700"
                 style="background: none"
+                name="password"
               />
             </div>
+            {% if haserror %}
+            <p class="font-bold text-red-800 pt-5 ml-3">invalid username or password!</p>
+            {% endif %}
           </div>
-          <a
-            href="#"
-            class="text-xs text-green-400 hover:text-green-500 float-right mb-4"
-            >Forgot Password?</a
-          >
           <button
             type="submit"
             class="w-full py-2 rounded-full bg-green-600 text-gray-100 focus:outline-none"

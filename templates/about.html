@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <title>About Us</title>
+    <style>
+        @import "https://fonts.googleapis.com/css?family=Josefin+Sans:400,700";
+        .split {
+        height: 100%;
+        width: 50%;
+        position: fixed;
+        top: 0;
+        overflow-x: hidden;
+        }
+
+
+        .left {
+        left: 0;
+        background-color: #dedfe3;
+        }
+
+        .right {
+        right: 0;
+        background-color: rgb(219 219 217);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Josefin Sans", sans-serif;
+            background-color: #eee;
+        }
+        body a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .card {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            height: 500px;
+            width: 350px;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            perspective: 600px;
+            transition: 0.5s;
+        }
+        .card:hover .f-card-front {
+            transform: rotateX(-180deg);
+        }
+        .card:hover .s-card-front {
+            transform: rotateX(-180deg);
+        }
+        .card:hover .card-back {
+            transform: rotateX(0deg);
+        }
+        
+        .f-card-front {
+            height: 100%;
+            width: 100%;
+            background-image: url(https://lms.rouzbeh.info/pluginfile.php/2274/user/icon/moove/f1?rev=11378449);
+            background-position: 50% 50%;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: 0.5s;
+            background-repeat: no-repeat;
+
+        }
+        .s-card-front {
+            height: 100%;
+            width: 100%;
+            background-image: url(https://lms.rouzbeh.info/pluginfile.php/2233/user/icon/moove/f1?rev=);
+            background-position: 50% 50%;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: 0.5s;
+            background-repeat: no-repeat;
+
+        }
+        
+        .card-back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            transition: 0.5s;
+            color: #ffffff;
+            text-align: center;
+        }
+        .card-back h2 {
+            margin: 60% auto 35% auto;
+            font-size: 26px;
+        }
+        .card-back h2 span {
+            font-size: 20px;
+        }
+        .card-back a {
+            height: 20px;
+            width: 20px;
+            padding: 5px 5px;
+            border-radius: 4px;
+            line-height: 20px;
+        }
+        .card-back a:hover {
+            color: #000000;
+            background-color: #fff;}
+        
+
+    </style>
+</head>
+<body>
+    <div class="split left">
+        <div class="card">
+            <div class="s-card-front"></div>
+            <div class="card-back">
+                <h2>Amirhossein Radmehr<br><span>Developer</span><br><span>Student</span><br><span>Studying at Rouzbeh</span></h2>
+                <div class="social-icons">
+                    <a href="https://t.me/Radmehr38" class="fa fa-telegram" aria-hidden="true"></a>
+                    <a href="https://github.com/amirHosseinRadmehr" class="fa fa-github" aria-hidden="true"></a>
+                    <a href="https://www.instagram.com/amirhradmehr123/" class="fa fa-instagram" aria-hidden="true"></a>
+                </div>
+            </div>
+    </div> 
+    </div>
+    
+    <div class="split right">
+        <div class="card">
+            <div class="f-card-front"></div>
+            <div class="card-back">
+                <h2>Amirhossein Moqimi<br><span>Developer</span><br><span>Student</span><br><span>Studying at Rouzbeh</span></h2>
+                <div class="social-icons">
+                    <a href="https://t.me/Amir_khan_00" class="fa fa-telegram" aria-hidden="true"></a>
+                    <a href="https://github.com/amir-hossein-moqimi" class="fa fa-github" aria-hidden="true"></a>
+                    <a href="https://www.instagram.com/amir_hossein_moqimi/" class="fa fa-instagram" aria-hidden="true"></a>
+                </div>
+            </div>
+    </div> 
+    </div>
+    
+</body>
+</html>

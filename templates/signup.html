@@ -182,9 +182,6 @@
             </a>
           </div>
           <h2 class="text-3xl text-center text-gray-700 mb-4">Signup Form</h2>
-          {% if haserror %}
-          <p>{{error}}</p>
-          {% endif %}
           <div
             class="input-div border-b-2 relative grid my-5 py-1 focus:outline-none"
             style="grid-template-columns: 7% 93%"
@@ -272,7 +269,7 @@
           </div>
           <div class="containerra">
             <input type="radio" name="type" id="option-1" value="Influencer" />
-            <input type="radio" name="type" id="option-2" value="Manufacture" />
+            <input type="radio" name="type" id="option-2" value="Manufacture" disabled />
             <input type="radio" name="type" id="option-3" value="Sponsor" />
             <label
               for="option-1"
@@ -296,6 +293,9 @@
               <span>Sponsor</span>
             </label>
           </div>
+          {% if haserror %}
+          <p class="font-bold text-red-800 pt-5 ml-3">{{error}}!</p>
+          {% endif %}
           <button
             type="submit"
             class="w-full py-2 rounded-full bg-green-600 text-gray-100 focus:outline-none mt-4"

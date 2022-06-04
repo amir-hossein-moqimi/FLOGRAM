@@ -2,19 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-# Create your models here.
-# class CreateUser(models.Model):
-#     class TYPE(models.TextChoices):
-#         Influencer = 'Influencer'
-#         Manufacture = 'Manufacture'
-#         Sponsor = 'Sponsor'
-#     username = models.CharField(max_length=50)
-#     Instagram = models.CharField(max_length=50)
-#     password = models.CharField(max_length=50)
-#     email = models.EmailField(max_length=50)
-#     type = models.CharField(max_length=11, choices=TYPE.choices, default=TYPE.Influencer)
-#     def __str__(self):
-#         return self.username
+import random
+from django.utils import timezone
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -22,9 +11,12 @@ class Profile(models.Model):
         Influencer = 'Influencer'
         Manufacture = 'Manufacture'
         Sponsor = 'Sponsor'
-    Instagram = models.CharField(max_length=50, unique=True, null=True)
+    Instagram = models.CharField(max_length=50, null=True)
     type = models.CharField(max_length=11, choices=TYPE.choices, default=TYPE.Influencer, null=True)
-    email = models.EmailField(max_length=50, unique=True, null=True)
+    email = models.EmailField(max_length=50, null=True)
+    verified = models.BooleanField(default=False)
+    description = models.CharField(max_length=1000, default='no description!') 
+    money = models.IntegerField(default=0)
     def __str__(self):
         return self.user.username
 
@@ -32,3 +24,17 @@ class Profile(models.Model):
 def create_profile_for_new_user(sender, created, instance, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
+def generate_unique_code():
+    characters = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+    while True:
+        code = ''.join(random.choices(characters, k=6))
+        if Request_Code.objects.filter(code=code).count() == 0:
+            break
+    return code
+
+class Request_Code(models.Model):
+    code = models.CharField(max_length=6, default=generate_unique_code)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.code

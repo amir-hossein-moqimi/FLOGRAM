@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if can_edit %}
+    <link rel="stylesheet" href="../static/inf.css">
+    {% else %}
+    <link rel="stylesheet" href="../static/inf_view.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    {% endif %}
+    <title>{{influencer}}</title>
+</head>
+<body>
+    {% if can_edit %}
+    <div class="container">
+        <img class="brand-logo" src="../static/profs/{{id}}.jpg"></img>
+        <div class="brand-title">{{influencer}}</div>
+        <div class="inputs">
+        <form action="" method="post">
+        {% csrf_token %}
+          <label>description</label>
+          <input name="description" type="text" placeholder="add description here" />
+          <label>money needed</label>
+          <input name="money" type="number" placeholder="add your needed money in dollors" />
+          {% if result != None %}
+          <p class="font-bold text-red-800 pt-5 ml-3">{{result}}</p>
+          {% endif %}
+          <button type="submit">submit</button>
+        </form>
+        </div>
+    </div>
+    {% else %}
+    <div class="main-container">
+        <div class="heading">
+          <h1 class="heading__title">{{requested.profile.Instagram}}</h1>
+          <img class="brand-logo" src="../static/profs/{{id}}.jpg"></img>
+        <div class="cards">
+          <div class="card card-1">
+            <div class="card__icon"><i class="fa fa-comment"></i></div>
+            <h2 class="card__title">Average comments : {{object.get_average_comments}}</h2>
+          </div>
+          <div class="card card-2">
+            <div class="card__icon"><i class="fa fa-eye"></i></div>
+      
+            <h2 class="card__title">Average view : {{object.get_average_view}}</h2>
+      
+          </div>
+          <div class="card card-3">
+            <div class="card__icon"><i class="fa fa-thumbs-up"></i></div>
+      
+            <h2 class="card__title">Average likes : {{object.get_average_likes}}</h2>
+      
+          </div>
+          <div class="card card-4">
+            <div class="card__icon"><i class="fa fa-info"></i></div>
+      
+            <h2 class="card__title">description : {{requested.profile.description}}</h2>
+      
+          </div>
+          <div class="card card-5">
+            <div class="card__icon"><i class="fa fa-money"></i></div>
+      
+            <h2 class="card__title">money needed : {{requested.profile.money}}$</h2>
+      
+          </div>
+      
+        </div>
+      </div>
+    {% endif %}
+</body>
+</html>

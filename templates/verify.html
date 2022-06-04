@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Page</title>
+</head>
+<body>
+    {% if verified %}
+        <div>
+            <p>Your account verified successfully!</p>
+            <p>You can now move to <a href="{% url 'accounts:loginpage' %}">login</a> page</p>
+        </div>
+    {% else %}
+        <div><p>Please verify your instagram account first then try again!</p></div>
+    {% endif %}
+</body>
+</html>
